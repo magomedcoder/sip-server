@@ -10,6 +10,7 @@ file(GLOB_RECURSE SIP_SRC ${SRC_DIR}/*.cpp ${SRC_DIR}/*.h ${SRC_DIR}/*.hpp)
 
 include_directories(${SRC_DIR})
 add_executable(${PROJECT_NAME} main.cpp ${SIP_SRC})
+set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME sip-server)
 
 if (UNIX)
     target_link_libraries(${PROJECT_NAME} -pthread)
